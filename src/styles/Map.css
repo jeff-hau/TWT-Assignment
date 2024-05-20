@@ -1,0 +1,5 @@
+.map {
+  height: 80vh; /* Adjust height as needed */
+  margin: 5vh 5vw; /* Adding padding using viewport units */
+  background-color: #E1AFD1;
+}
