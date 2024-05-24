@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/TWT-Assignment/static/css/main.826712e2.css",
-    "main.js": "/TWT-Assignment/static/js/main.5b32eabd.js",
+    "main.js": "/TWT-Assignment/static/js/main.30a6369b.js",
     "static/js/453.d4893e75.chunk.js": "/TWT-Assignment/static/js/453.d4893e75.chunk.js",
     "static/media/BG1.jpg": "/TWT-Assignment/static/media/BG1.8fbc41574360b872cdd7.jpg",
     "static/media/Quotes_BG.jpg": "/TWT-Assignment/static/media/Quotes_BG.f768bbd2c4dfbbadd57c.jpg",
@@ -10,11 +10,11 @@
     "static/media/logo.png": "/TWT-Assignment/static/media/logo.a7ee7675670698bfb923.png",
     "index.html": "/TWT-Assignment/index.html",
     "main.826712e2.css.map": "/TWT-Assignment/static/css/main.826712e2.css.map",
-    "main.5b32eabd.js.map": "/TWT-Assignment/static/js/main.5b32eabd.js.map",
+    "main.30a6369b.js.map": "/TWT-Assignment/static/js/main.30a6369b.js.map",
     "453.d4893e75.chunk.js.map": "/TWT-Assignment/static/js/453.d4893e75.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.826712e2.css",
-    "static/js/main.5b32eabd.js"
+    "static/js/main.30a6369b.js"
   ]
 }
