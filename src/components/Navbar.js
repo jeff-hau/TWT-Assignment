@@ -1,33 +1,39 @@
 import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/logo.png";
-import { Link } from "react-router-dom";
 import ReorderIcon from '@mui/icons-material/Reorder';
 import "../styles/Navbar.css";
 
 function Navbar() {
   const [openLinks, setOpenLinks] = useState(false);
+  const location = useLocation();
 
   const toggleNavbar = () => {
     setOpenLinks(!openLinks);
   };
+
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
+
   return (
     <div className="navbar">
       <div className="leftSide" id={openLinks ? "open" : "close"}>
-        <img src={Logo} />
+        <img src={Logo} alt="Logo" />
         <div className="hiddenLinks">
-          <Link to="/"> Home </Link>
-          <Link to="/map"> Map </Link>
-          <Link to="/awareness"> Awareness </Link>
-          <Link to="/news"> News </Link>
-          <Link to="/contact"> Contact </Link>
+          <Link to="/TWT-Assignment/" className={isActive("/TWT-Assignment/") ? "active" : ""}> Home </Link>
+          <Link to="/map" className={isActive("/map") ? "active" : ""}> Map </Link>
+          <Link to="/awareness" className={isActive("/awareness") ? "active" : ""}> Awareness </Link>
+          <Link to="/news" className={isActive("/news") ? "active" : ""}> News </Link>
+          <Link to="/contact" className={isActive("/contact") ? "active" : ""}> Contact </Link>
         </div>
       </div>
       <div className="rightSide">
-        <Link to="/"> Home </Link>
-        <Link to="/map"> Map </Link>
-        <Link to="/awareness"> Awareness </Link>
-        <Link to="/news"> News </Link>
-        <Link to="/contact"> Contact </Link>
+        <Link to="/TWT-Assignment/" className={isActive("/TWT-Assignment/") ? "active" : ""}> Home </Link>
+        <Link to="/TWT-Assignment/map" className={isActive("/TWT-Assignment/map") ? "active" : ""}> Map </Link>
+        <Link to="/TWT-Assignment/awareness" className={isActive("/TWT-Assignment/awareness") ? "active" : ""}> Awareness </Link>
+        <Link to="/TWT-Assignment/news" className={isActive("/TWT-Assignment/news") ? "active" : ""}> News </Link>
+        <Link to="/TWT-Assignment/contact" className={isActive("/TWT-Assignment/contact") ? "active" : ""}> Contact </Link>
         <button onClick={toggleNavbar}>
           <ReorderIcon />
         </button>

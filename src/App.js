@@ -6,6 +6,7 @@ import Contact from "./pages/Contact";
 import Map from "./pages/Map";
 import News from './pages/News';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Awareness from "./pages/Awareness";
 
 function App() {
   return (
@@ -13,10 +14,11 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/map" element={<Map />} />
-          <Route path="/news" element={<News />} />
+          <Route path="/TWT-Assignment/" element={<Home />} />
+          <Route path="/TWT-Assignment/contact" element={<Contact />} />
+          <Route path="/TWT-Assignment/map" element={<Map />} />
+          <Route path="/TWT-Assignment/news" element={<News />} />
+          <Route path="/TWT-Assignment/awareness" element={<Awareness />} />
         </Routes>
         <Footer />
       </Router>

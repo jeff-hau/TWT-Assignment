@@ -27,6 +27,7 @@ function loadBingMapsScript() {
 
 function Map() {
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     let isMounted = true; // Flag to track component mount state
@@ -35,10 +36,12 @@ function Map() {
       .then((Microsoft) => {
         if (isMounted) {
           setIsScriptLoaded(true);
+          setIsLoading(false);
         }
       })
       .catch((error) => {
         console.error("Error loading Bing Maps script:", error);
+        setIsLoading(false);
       });
 
     return () => {
@@ -69,7 +72,16 @@ function Map() {
     }
   }, [isScriptLoaded]);
 
-  return <div id="map" className="map"></div>;
+  return (
+    <div className="map-container">
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : (
+        <div id="map" className="map"></div>
+      )}
+    </div>
+  );
+  
 }
 
 export default Map;

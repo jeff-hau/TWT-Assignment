@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/Home.css';
+import aqiImage from '../assets/AQI.png'; // Import the image
 
 const TOKEN_ID = 'c4dcce1dfc2a285f2625860c4b1a33a99623a655';
 
@@ -53,7 +54,7 @@ function Home() {
 
       if (result.data.length === 0) {
         setSearchResults([]);
-        setStationDetails(null);  // Reset station details when no results are found
+        setStationDetails(null);
         return;
       }
 
@@ -148,6 +149,7 @@ function Home() {
           </a>
         </div>
       </div>
+      <img src={aqiImage} alt="AQI Information" className="aqi-image" />
       <div className="country-selector">
         <h2>Southeast Asia Country</h2>
         <div className="buttons">

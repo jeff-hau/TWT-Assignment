@@ -1,5 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F5DAD2; /* Set the background color */
+}
+
+.map-container {
+  margin: 5vh 5vw; /* Adding padding using viewport units */
+}
+
 .map {
   height: 80vh; /* Adjust height as needed */
-  margin: 5vh 5vw; /* Adding padding using viewport units */
-  background-color: #E1AFD1;
+  background-color: #ffffff; /* Match the background color */
 }

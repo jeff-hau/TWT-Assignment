@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import '../styles/News.css';
 
-function loadRssAppScript() {
+function loadElfsightScript() {
   return new Promise((resolve, reject) => {
     const script = document.createElement('script');
-    script.src = 'https://widget.rss.app/v1/magazine.js';
-    script.type = 'text/javascript';
-    script.async = true;
+    script.src = 'https://static.elfsight.com/platform/platform.js';
+    script.setAttribute('data-use-service-core', '');
+    script.defer = true;
     script.onload = () => resolve();
-    script.onerror = () => reject(new Error('Failed to load RSS widget script'));
+    script.onerror = () => reject(new Error('Failed to load Elfsight widget script'));
     document.body.appendChild(script);
   });
 }
@@ -16,23 +16,23 @@ function loadRssAppScript() {
 function News() {
   useEffect(() => {
     let script;
-    loadRssAppScript()
+    loadElfsightScript()
       .then(() => {
-        console.log('RSS widget script loaded');
+        console.log('Elfsight widget script loaded');
       })
       .catch(error => {
-        console.error('Error loading RSS widget script:', error);
+        console.error('Error loading Elfsight widget script:', error);
       });
 
     return () => {
-      script = document.querySelector('script[src="https://widget.rss.app/v1/magazine.js"]');
+      script = document.querySelector('script[src="https://static.elfsight.com/platform/platform.js"]');
       if (script) document.body.removeChild(script);
     };
   }, []);
 
   return (
     <div className="news-container">
-      <rssapp-magazine id="Bmv9BqOx6FkvZETm"></rssapp-magazine>
+      <div className="elfsight-app-0d8bc1a3-8701-46b1-bd64-d3fd0ce00992" data-elfsight-app-lazy></div>
     </div>
   );
 }
